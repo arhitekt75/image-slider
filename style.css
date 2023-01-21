@@ -126,6 +126,18 @@ body {
     justify-content: space-around;
 }
 
+.img-box img:first-child {
+    display: block;
+}
+
+.img-box img:nth-child(1){
+    display: none;
+}
+
+.img-box img:nth-child(2){
+    display: none;
+}
+
 .button-bar {
     max-width: 90%;
     height: 80px;
