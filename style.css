@@ -34,12 +34,14 @@ button {
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
+    position: relative;
 }
 
 .container {
     max-width: 80%;
     margin: 0 auto;
     padding: 10px 20px;
+    position: relative;
 }
 
 .header {
@@ -124,6 +126,7 @@ body {
     height: 100%;
     display: flex;
     justify-content: space-around;
+    z-index: 1;
 }
 
 .img-box img:first-child {
@@ -147,6 +150,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .barea {
@@ -160,11 +164,50 @@ body {
 .box {
     max-width: 400px;
     height: 200px;
+    padding: 20px;
     background-color: steelblue;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
+    z-index: 1;
+}
+
+.box h4 {
+   text-align: center;
+}
+
+#modal-btn {
+    margin: 20px 40%;
+}
+
+.modal-box {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 20%;
+    left: 30%;
+    z-index: 11;
+    display: none;
+}
+
+.modal-box span {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    display: none;
 }
 
 

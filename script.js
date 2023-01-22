@@ -12,13 +12,15 @@ closeBtn.addEventListener('click', ()=>{
 });
 
 
+
 // kreiranje img slidera
 let leftBtn = document.querySelector('#left-btn');
 let rightBtn = document.querySelector('#right-btn');
 let pictures = document.querySelectorAll('.img-box img');
 let imgNum = 0;
 
-leftBtn.addEventListener('click', ()=>{
+// kreiranje arrow funkcije
+const moveLeft = ()=>{
     displayNone();
     imgNum--;
 
@@ -27,9 +29,9 @@ leftBtn.addEventListener('click', ()=>{
     }
 
     pictures[imgNum].style.display = 'block';
-});
+}
 
-rightBtn.addEventListener('click', ()=>{
+const moveRight = ()=>{
     displayNone();
     imgNum++;
 
@@ -38,7 +40,13 @@ rightBtn.addEventListener('click', ()=>{
     }
 
     pictures[imgNum].style.display = 'block';
-});
+}
+
+ // event listeneri za strelice
+leftBtn.addEventListener('click', moveLeft );
+
+rightBtn.addEventListener('click', moveRight );
+
 
 // sakrivanje svih slika po defaultu
 const displayNone = ()=>{
@@ -47,3 +55,48 @@ const displayNone = ()=>{
     }); 
     
 }
+
+
+
+
+// kreiranje portfolija
+
+const portfolioSort = (button)=> {
+    let category = button.getAttribute('data-category');
+    let boxItem = document.querySelectorAll('.box');
+
+    boxItem.forEach((e)=>{
+        e.style.display ='none';
+    });
+
+    if(category === 'sve'){
+        boxItem.forEach((e)=>{
+            e.style.display ='block';
+        });
+    };
+
+    boxItem.forEach((e)=>{
+        if(e.getAttribute('data-category').includes(category)){
+            e.style.display = 'block';
+        };
+    });
+};
+
+
+
+// kreiranje modal box-a
+let modalBtn = document.querySelector('#modal-btn');
+let modalBox = document.querySelector('.modal-box');
+let overlay = document.querySelector('.modal-overlay');
+
+const startModal = ()=>{
+    modalBox.style.display = 'block';
+    overlay.style.display = 'block';
+}
+
+const stopModal = ()=>{
+    modalBox.style.display = 'none';
+    overlay.style.display = 'none';
+}
+
+modalBtn.addEventListener('click', startModal);

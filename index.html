@@ -59,22 +59,38 @@
         </div>
     </div>
     <div class="button-bar">
-        <button>Hotels</button>
-        <button>Restaurants</button>
-        <button>Bars</button>
-        <button>Atractions</button>
-        <button>All</button>
+        <button data-category = "hoteli" onclick="portfolioSort(this)" >Hotels</button>
+        <button data-category="restorani" onclick="portfolioSort(this)">Restaurants</button>
+        <button data-category="barovi" onclick="portfolioSort(this)">Bars</button>
+        <button data-category="atrakcije" onclick="portfolioSort(this)">Atractions</button>
+        <button data-category="sve" onclick="portfolioSort(this)">All</button>
     </div>
     <div class="barea">
-        <div class="box">Hotel 1</div>
-        <div class="box">Restaurant</div>
-        <div class="box">Bar 1</div>
-        <div class="box">Hotel 2</div>
-        <div class="box">Bar 2</div>
-        <div class="box">Attraction</div>
+        <div class="box" data-category="hoteli"><h4>Hotel 1</h4></div>
+        <div class="box" data-category="restorani"><h4>Restoran 1</h4></div>
+        <div class="box" data-category="barovi"><h4>Bar 1</h4></div>
+        <div class="box" data-category="hoteli"><h4>Hotel 2</h4></div>
+        <div class="box" data-category="barovi"><h4>Bar 2</h4></div>
+        <div class="box" data-category="hoteli"><h4>Hotel 3</h4></div>
+        <div class="box" data-category="atrakcije"><h4>Attraction 1</h4></div>
+        <div class="box" data-category="restorani"><h4>Restoran 2</h4></div>
+        <div class="box" data-category="barovi"><h4>Bar 3</h4></div>
+        <div class="box" data-category="atrakcije"><h4>Attraction 2</h4></div>
+        <div class="box" data-category="atrakcije"><h4>Attraction 3</h4></div>
+        <div class="box" data-category="atrakcije"><h4>Attraction 4</h4></div>
     </div>
-</div>
 
+
+    <button id="modal-btn">More info on modal</button>
+    <div class="modal-box">
+        <span class="material-symbols-outlined" id="close-btn" onclick="stopModal()">
+            close
+            </span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo perferendis laborum ea similique! Nam eaque alias temporibus dolorem magni laborum?</p>
+    </div>
+    
+</div>
+<div class="modal-overlay"></div>
     <script src="script.js"></script>
 </body>
 </html>
