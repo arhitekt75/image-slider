@@ -19,11 +19,25 @@ let pictures = document.querySelectorAll('.img-box img');
 let imgNum = 0;
 
 leftBtn.addEventListener('click', ()=>{
-    console.log('left')
+    displayNone();
+    imgNum--;
+
+    if(imgNum === -1) {
+        imgNum = pictures.length - 1;
+    }
+
+    pictures[imgNum].style.display = 'block';
 });
 
 rightBtn.addEventListener('click', ()=>{
     displayNone();
+    imgNum++;
+
+    if (imgNum === pictures.length) {
+        imgNum = 0;
+    }
+
+    pictures[imgNum].style.display = 'block';
 });
 
 // sakrivanje svih slika po defaultu
